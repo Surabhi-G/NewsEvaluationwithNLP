@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>News Evaluation with Natural Language Processing</title>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>News Evaluation with Natural Language Processing</h1>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return handleSubmit(event)">
+                    <input id="newsurl" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter the news article URL">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <h3>Results:</h3>
+                <div id="results">
+                    <table>
+                        <tr>
+                            <th>News Polarity</th>
+                            <th>Polarity confidence</th>
+                            <th>News Subjectivity</th>
+                            <th>Subjectivity confidence</th>
+                          </tr>
+                          <tr>
+                            <td id="polarity"></td>
+                            <td id="polarity_confidence"></td>
+                            <td id="subjectivity"></td>
+                            <td id="subjectivity_confidence"></td>
+                          </tr>
+                    </table>
+                    <h3>Evaluated text</h3>
+                    <p id="evaluated_text"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Developed by Surabhi Goswami</p>
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration =>{
+                    console.log('SW registered: ', registration);
+                });
+            });
+            }else{
+            console.log("Service Working not working");
+                }
+        </script>
+    </body>
+</html>
