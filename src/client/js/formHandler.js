@@ -1,6 +1,6 @@
 function handleSubmit(event) {
     event.preventDefault()
-    let formText = document.getElementById('name').value
+    let formText = document.getElementById('newsurl').value
     
     if(isNaN(parseFloat(formText))){
         alert("Please enter URL of news article");
@@ -10,7 +10,7 @@ function handleSubmit(event) {
     }
     else{
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/NewsURL',{
+    fetch('http://localhost:3000/NewsURL',{
         method: "POST",
         mode: "cors",
         headers: {

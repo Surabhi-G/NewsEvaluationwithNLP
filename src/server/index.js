@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!')
 })
 
 app.get('/test', function (req, res) {
@@ -38,8 +38,8 @@ app.get('/test', function (req, res) {
 })
 
 app.post("/NewsURL", (req, res) => {
-    const { Text } = req.body;
-    TextAPI.sentiment({ formText: req.body.Text,
+    const { text } = req.body;
+    TextAPI.sentiment({ formText: req.body.text,
         mode: 'Document'
       }, function(error, response) {
         res.send(response);;
