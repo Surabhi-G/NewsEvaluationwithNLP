@@ -39,9 +39,10 @@ app.get('/test', function (req, res) {
 
 app.post("/NewsURL", (req, res) => {
     const { text } = req.body;
-    TextAPI.sentiment({ formText: req.body.text,
-        mode: 'Document'
-      }, function(error, response) {
-        res.send(response);;
-    });
-  });
+    TextAPI.sentiment({ 'formText': req.body.text,
+            mode: 'Document'
+        }, function(error, response) {
+            res.send(response)
+            }
+    );
+});

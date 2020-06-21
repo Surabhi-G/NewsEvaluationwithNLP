@@ -15,7 +15,7 @@ module.exports = {
         library: 'Client',
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.min.js'
-	   },
+    },
     module:{
         rules: [
             {

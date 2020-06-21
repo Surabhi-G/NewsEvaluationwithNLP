@@ -10,12 +10,7 @@ module.exports = {
     devtool: 'source-map',
     output:{
         libraryTarget: 'var',
-        library: 'Client', 
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.min.js'   
-        },
-    devServer: {
-        contentBase: './dist',
+        library: 'Client',    
     },
     module:{
         rules: [
