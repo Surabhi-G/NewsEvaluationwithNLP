@@ -15,7 +15,7 @@ var TextAPI = new aylien({
 });
 
 app.use(express.static('dist'))
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
@@ -37,11 +37,13 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-app.post("/NewsURL", (req, res) => {
-    TextAPI.sentiment({ 'url': req.body.text,
+app.post('http://localhost:3000/NewsURL', (req, res) => {
+    const { text } = req.body;
+    TextAPI.sentiment({ text: req.body.text,
             mode: 'Document'
         }, function(error, response) {
+            console.log(response)
             res.send(response)
-            }
+        }
     );
 });
