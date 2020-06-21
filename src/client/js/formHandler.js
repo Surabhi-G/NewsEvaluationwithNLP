@@ -19,14 +19,14 @@ function handleSubmit(event) {
         body: JSON.stringify({ formText })
         })
         .then(res => res.json())
-        .then(data => {
-          document.getElementById("polarity").innerHTML = data.polarity;
-          document.getElementById("subjectivity").innerHTML = data.subjectivity;
+        .then(res => {
+          document.getElementById("polarity").innerHTML = res.polarity;
+          document.getElementById("subjectivity").innerHTML = res.subjectivity;
           document.getElementById("polarity_confidence").innerHTML =
-            data.polarity_confidence;
+            res.polarity_confidence;
           document.getElementById("subjectivity_confidence").innerHTML =
-            data.subjectivity_confidence;
-          document.getElementById("evaluated_text").innerHTML = data.text;
+            res.subjectivity_confidence;
+          document.getElementById("evaluated_text").innerHTML = res.text;
         })
     }
 }

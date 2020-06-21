@@ -6,7 +6,6 @@ import'./styles/form.scss'
 import'./styles/footer.scss'
 import'./styles/base.scss'
 
-console.log(checkForURL);
 
 alert("I EXIST")
-console.log("CHANGE!!");
+
