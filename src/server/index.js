@@ -36,13 +36,11 @@ app.listen(3000, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
-
-app.post('/NewsURL', (req, res) => {
-    const { text } = req.body;
-    TextAPI.sentiment({ 'url': req.body.text,
-    mode: 'Document'
-}, function(error, response) {
-    res.send(response)
-    }
+app.post('/NewsURL', (req, res) => {    
+    const { text } = req.body;    
+    TextAPI.sentiment({ 'url': req.body.text,    
+    mode: 'Document'}, 
+    function(error, response) {    
+    res.send(response)    }    
     );
 });
