@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>News Evaluation with Natural Language Processing</title>
+        <title>News Evaluation with NLP</title>
     </head>
     <body>
         <header>
@@ -12,11 +12,11 @@
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="newsurl" type="url" name="input" value=""  placeholder="Enter the news article URL">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="submitButton" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
-            <section>
-                <h3>Results:</h3>
+            <section class= "results">
+                <h2>Results:</h2>
                 <div id="results">
                     <ul>
                         <li>

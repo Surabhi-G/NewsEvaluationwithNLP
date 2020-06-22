@@ -2,13 +2,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 16px;
+    background-color: black;
 }
 
 main {
     flex: 2;
 }
+.results{
+    color: white;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
 
+    & h3{
+        font-size: medium;
+    }
+}
 section {
     max-width: 800px;
     margin: 50px auto;
 }
+

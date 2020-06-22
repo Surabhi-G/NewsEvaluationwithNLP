@@ -1,9 +1,17 @@
+@import url('base.scss');
+
 form {
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
+    background-color: darkslategray;
 }
 
+#submitButton{
+    color: white;
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 input {
     padding: 5px 20px;
     width: 100%;
