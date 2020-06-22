@@ -1,34 +1,29 @@
 function handleSubmit(event) {
   event.preventDefault()
-  let text = document.getElementById('newsurl').value
-    
-  if(true){
-    fetch('http://localhost:3000/NewsURL',{
+  let formText = document.getElementById('newsurl').value
+  
+  if (Client.checkForURL(formText) != true){
+      alert('Enter correct URL');
+  }
+  else{
+  console.log("::: Form Submitted :::")
+  fetch('http://localhost:3000/NewsURL',{
       method: "POST",
       mode: "cors",
       headers: {
-          "Content-Type": "application/json"
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({ text })
-    })
-      .then(res => {
-        return res.json()
+      body: JSON.stringify({'text': formText})
       })
-      updateUI('/test');
+        .then(res => res.json())
+        .then(function(res) {
+          console.log(res);
+          document.getElementById("polarity").innerHTML = res.polarity;
+          document.getElementById("polarity_confidence").innerHTML =res.polarity_confidence;
+          document.getElementById("subjectivity").innerHTML = res.subjectivity;
+          document.getElementById("subjectivity_confidence").innerHTML =res.subjectivity_confidence;
+          document.getElementById("excerpt").innerHTML = res.text;
+      })
   }
 }
-const updateUI = async (url='') => {
-  const req = await fetch(url);
-  try{
-    const Response = await req.json();
-    document.getElementById("polarity").innerHTML = Response.polarity;
-    document.getElementById("subjectivity").innerHTML = Response.subjectivity;
-    document.getElementById("polarity_confidence").innerHTML =Response.polarity_confidence;
-    document.getElementById("subjectivity_confidence").innerHTML =Response.subjectivity_confidence;
-    document.getElementById("excerpt").innerHTML = Response.text;
-  }
-  catch(error){
-    console.log("error", error);
-  }
-};
 export { handleSubmit }

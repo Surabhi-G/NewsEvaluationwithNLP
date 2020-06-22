@@ -37,13 +37,12 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-app.post('http://localhost:3000/NewsURL', (req, res) => {
+app.post('/NewsURL', (req, res) => {
     const { text } = req.body;
-    TextAPI.sentiment({ text: req.body.text,
-            mode: 'Document'
-        }, function(error, response) {
-            console.log(response)
-            res.send(response)
-        }
+    TextAPI.sentiment({ 'url': req.body.text,
+    mode: 'Document'
+}, function(error, response) {
+    res.send(response)
+    }
     );
 });
