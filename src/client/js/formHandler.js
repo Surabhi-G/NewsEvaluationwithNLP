@@ -12,7 +12,7 @@ function handleSubmit(event) 
     headers: {        
       "Content-Type": "application/json"      
     },      
-    body: JSON.stringify({ text : formText[0].value })      
+    body: JSON.stringify({ text : formText })      
   }).then((res) => res.json())        
   .then(function(res) {                  
     console.log(res);                 
