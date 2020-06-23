@@ -11,6 +11,7 @@ var TextAPI = new aylien({
     application_id: process.env.APP_ID,
     application_key: process.env.APP_KEY
 });
+
 app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
