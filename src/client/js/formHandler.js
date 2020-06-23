@@ -13,7 +13,7 @@ function handleSubmit(event) 
       "Content-Type": "application/json"      
     },      
     body: JSON.stringify({ text : formText })      
-  }).then((res) => res.json())        
+  }).then((res) => res.text())        
   .then(function(res) {                  
     console.log(res);                 
     document.getElementById("polarity").innerHTML = res.polarity;                  
