@@ -38,3 +38,5 @@ app.post('/NewsURL', (req, res) => {    
     res.send(response)    }    
     );
 });
+
+module.exports = app;
