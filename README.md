@@ -12,8 +12,9 @@ Webpack Loaders and Plugins
 Creating layouts and page design
 Service workers
 Using APIs and creating requests to external URLs
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Run project
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Below shows how to run in development and production mode.
 
 run in development mode
@@ -27,8 +28,9 @@ Generate the dist files and then start server at port 3000
 $ npm run build-prod
 
 $ npm run start
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Configs
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Here, we have two webpack config files for both development mode(webpack.config.dev.js) and production mode(webpack.config.prod.js )
 
 We also have a package.json to manage dependencies
